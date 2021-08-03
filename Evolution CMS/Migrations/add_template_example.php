@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class AddTemplateExample extends Migration
 {
 
-    // Parameters adding tv
+    // Parameters adding template
     public $template_templatename = 'Test';
     public $template_templatealias = 'test';
     public $template_tvs = array(1, 2);
