@@ -13,6 +13,7 @@ class AddTvExample extends Migration
     public $tv_caption = 'Test';
     public $tv_templates = array(1, 2);
     public $tv_roles = array(1, 2);
+    public $tv_category = 0;
 
     /**
      * Run the migrations.
@@ -29,6 +30,7 @@ class AddTvExample extends Migration
             'type' => 'text',
             'name' => $this->tv_name,
             'caption' => $this->tv_caption,
+            'category' => $this->tv_category,
             'elements' => '',
             'display_params' => '',
             'default_text' => '',

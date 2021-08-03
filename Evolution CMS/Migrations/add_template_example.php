@@ -12,6 +12,7 @@ class AddTemplateExample extends Migration
     public $template_templatename = 'Test';
     public $template_templatealias = 'test';
     public $template_tvs = array(1, 2);
+    public $template_category = 0;
 
     /**
      * Run the migrations.
@@ -28,6 +29,7 @@ class AddTemplateExample extends Migration
             'templatename' => $this->template_templatename,
             'templatealias' => $this->template_templatealias,
             'description' => '',
+            'category' => $this->template_category,
             'content' => '',
             'createdon' => time(),
             'editedon' => time(),
