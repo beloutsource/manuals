@@ -8,7 +8,7 @@ class AddPluginExample extends AbstractMigration
     // Parameters adding plugin
     public $plugin_name = 'test';
     public $plugin_description = 'Test';
-    public $plugin_events = array(1, 2);
+    public $plugin_events = array('OnMODXInit');
     public $plugin_category = 0;
     public $plugin_static = 1;
     public $plugin_file = 'core/elements/plugins/test/test.plugin.php';
@@ -20,7 +20,7 @@ class AddPluginExample extends AbstractMigration
      */
     public function getEnv($param)
     {
-        $config = Config::fromYaml(dirname(dirname(dirname(__FILE__))) . '/phinx.yml');
+        $config = Config::fromPhp(dirname(dirname(__FILE__)) . '/phinx.php');
         $env = $config->getEnvironment($config->getDefaultEnvironment());
         if (isset($env[$param])) {
             return $env[$param];

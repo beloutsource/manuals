@@ -5,7 +5,6 @@ use Phinx\Config\Config;
 
 class AddTemplateExample extends AbstractMigration
 {
-
     // Parameters adding template
     public $template_templatename = 'Test';
     public $template_description = 'Test';
@@ -21,7 +20,7 @@ class AddTemplateExample extends AbstractMigration
      */
     public function getEnv($param)
     {
-        $config = Config::fromYaml(dirname(dirname(dirname(__FILE__))) . '/phinx.yml');
+        $config = Config::fromPhp(dirname(dirname(__FILE__)) . '/phinx.php');
         $env = $config->getEnvironment($config->getDefaultEnvironment());
         if (isset($env[$param])) {
             return $env[$param];
