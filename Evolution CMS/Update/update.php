@@ -2,13 +2,28 @@
 
 use Illuminate\Database\Schema\Blueprint;
 
-$lang_array = ['ukrainian' => 'uk',
-    'svenska' => 'sv', 'svenska-utf8' => 'sv', 'spanish' => 'es', 'spanish-utf8' => 'es', 'simple_chinese-gb2312' => 'zh', 'simple_chinese-gb2312-utf8' => 'zh',
-    'russian' => 'ru', 'russian-UTF8' => 'ru', 'portuguese' => 'pt', 'portuguese-br' => 'pt-br', 'portuguese-br-utf8' => 'pt-br',
-    'polish' => 'pl', 'polish-utf8' => 'pl', 'persian' => 'fa', 'norsk' => 'no', 'nederlands' => 'nl', 'nederlands-utf8' => 'nl',
-    'japanese-utf8' => 'ja', 'italian' => 'it', 'hebrew' => 'he', 'german' => 'de', 'francais' => 'fr', 'francais-utf8' => 'fr',
-    'finnish' => 'fi', 'english' => 'en', 'english-british' => 'en', 'danish' => 'da', 'czech' => 'cs', 'chinese' => 'zh', 'bulgarian' => 'bz'];
-chdir('../');
+$lang_array = [
+    'russian' => 'ru', 'russian-UTF8' => 'ru',
+    'svenska' => 'sv', 'svenska-utf8' => 'sv',
+    'spanish' => 'es', 'spanish-utf8' => 'es',
+    'simple_chinese-gb2312' => 'zh', 'simple_chinese-gb2312-utf8' => 'zh',
+    'portuguese' => 'pt', 'portuguese-br' => 'pt-br', 'portuguese-br-utf8' => 'pt-br',
+    'polish' => 'pl', 'polish-utf8' => 'pl',
+    'persian' => 'fa', 'norsk' => 'no',
+    'nederlands' => 'nl', 'nederlands-utf8' => 'nl',
+    'japanese-utf8' => 'ja',
+    'italian' => 'it',
+    'hebrew' => 'he',
+    'german' => 'de',
+    'francais' => 'fr',
+    'francais-utf8' => 'fr',
+    'finnish' => 'fi',
+    'english' => 'en', 'english-british' => 'en',
+    'danish' => 'da',
+    'czech' => 'cs',
+    'chinese' => 'zh',
+    'bulgarian' => 'bz'
+];
 $base_dir = getcwd();
 
 if (!isset($_GET['step'])) {
@@ -21,7 +36,7 @@ if (!isset($_GET['step'])) {
     $config = EvoInstaller::checkConfig($base_dir, $config_2_dir, $database_engine);
 
 //run unzip and install
-    EvoInstaller::downloadFile('https://github.com/evolution-cms/evolution/archive/3.x.zip', 'evo.zip');
+    EvoInstaller::downloadFile('https://github.com/evocms-community/evolution/archive/3.x.zip', 'evo.zip');
 
     $zip = new ZipArchive;
     $res = $zip->open($base_dir . '/evo.zip');
@@ -486,7 +501,7 @@ if ($cnt == 0) {
 }
 file_put_contents($base_dir . '/core/.install', time());
 unlink(__FILE__);
-header('Location: /install/');
+header('Location: /install/index.php');
 
 //echo "Site ready to update, please download latest version from github and unpack to server";
 
