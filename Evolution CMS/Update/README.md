@@ -12,7 +12,7 @@
 - Removed the language "Velikoukrov" (Ukranian) from the script updater.
 
 ## Usage
-Just put the `updater.php` script in the root of the site and run `https://example.com/updater.php` in the browser and 
+Just put the `update.php` script in the root of the site and run `https://example.com/update.php` in the browser and 
 follow the instructions.
 
 ## Original
